@@ -1,4 +1,4 @@
-# Kotlin and Compose Compatibility Issue Project
+# Kotlin and Compose Compatibility Issue
 
 ## Introduction
 This project encountered compatibility issues between Kotlin versions and Jetpack Compose Compiler. Specifically, the Compose Compiler (version 1.5.10) requires Kotlin version 1.9.22, but the current project is using Kotlin version 1.9.25, causing compilation errors during Android build.
