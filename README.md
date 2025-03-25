@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+# Kotlin and Compose Compatibility Issue Project
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Introduction
+This project encountered compatibility issues between Kotlin versions and Jetpack Compose Compiler. Specifically, the Compose Compiler (version 1.5.10) requires Kotlin version 1.9.22, but the current project is using Kotlin version 1.9.25, causing compilation errors during Android build.
 
-## Get started
+## Prerequisites
+- Node.js
+- Yarn
+- React Native
+- Android Studio
+- Xcode (for iOS development)
 
-1. Install dependencies
+## Installation Steps
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Clone the Repository
 ```bash
-npm run reset-project
+git clone https://github.com/maxwellwachira/kotlinissue.git
+cd kotlinissue
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
+```bash
+yarn install
+```
 
-## Learn more
+### 3. Environment Configuration
+Rename the `.env.example` file to `.env`:
+```bash
+cp .env.example .env
+```
+Fill in the respective licenses and configuration details in the `.env` file.
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4. img.ly Dashboard Configuration
+- Navigate to the img.ly dashboard
+- Add your application's package ID (bundle identifier). 
+- Edit the package ID and bundle identifier in app.json
+- This is crucial for SDK authorization and functionality
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 5. Generate Native Project Files
+```bash
+npx expo prebuild
+```
+This command will generate Android and iOS project files.
 
-## Join the community
+### 6. Android Development Build
+```bash
+yarn android
+```
 
-Join our community of developers creating universal apps.
+## Troubleshooting
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Android Build Issues
+At this stage, you will encounter Kotlin version compatibility errors:
+- Refer to the [Compose-Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin)
+
+### Note
+- iOS builds are working correctly
+- Android builds may require additional version adjustments
