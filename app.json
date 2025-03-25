@@ -46,6 +46,7 @@
             "kotlinVersion": "1.9.25"
           },
           "ios": {
+            "useFrameworks": "static",
             "deploymentTarget": "16.0"
           }
         }
